@@ -28,12 +28,13 @@
                     <li><a href="https://www.linkedin.com/in/pritam-pratik-agrawal-a97659b4/" class="nav-link">LinkedIn</a></li>
                 </ul>
 
-                <ul class="nav justify-content-end">
+                <ul class="nav navbar-nav justify-content-end">
                     {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link disabled">Hi: {{user.username}}</a></li>
                     <li class="nav-item"><a href="{% url 'post_new' %}" class="nav-link">New Post</a></li>
                     <li class="nav-item"><a href="{% url 'post_draft_list' %}" class="nav-link">Drafts</a></li>
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
-                    <li class="nav-item"><a>Welcome: {{user.username}}</a></li>
+                    
                     {% else %}
                     <li class="nav-item"><a href="{% url 'login' %}" class="nav-link"><i style='font-size:40px' class="fas fa-user"></i></a></li>
                     {% endif %}

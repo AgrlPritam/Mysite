@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url,include
 from django.contrib.auth import views
-from django.contrib.auth.views import LoginView,LogoutView
+from django.contrib.auth.views import LoginView, LogoutView
 
 urlpatterns = [
     url(r'',include('blog.urls')),
-    url(r'^accounts/login/$',LoginView.as_view(),name='login'),
-    url(r'^accounts/logout/$',LogoutView.as_view(),name='logout',kwargs={'next_page':'/'}),
+    url(r'^accounts/login/$',LoginView.as_view(template_name='registration/login.html'),name='login'),
+    url(r'^accounts/logout/$',LogoutView.as_view(template_name='blog/base.html'),name='logout',kwargs={'next_page':'/'}),
     path('admin/', admin.site.urls),
 ]
