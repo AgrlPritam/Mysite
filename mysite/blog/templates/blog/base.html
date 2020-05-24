@@ -5,8 +5,9 @@
         <meta charset="utf-8">
         <title>Blog</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        
-        
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
         <!-- Medium Style Editor.Source - https://github.com/yabwe/medium-editor-->
         <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
         <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
@@ -18,13 +19,13 @@
         
     </head>
     <body class="loader">
-        <nav class="navbar navbar-expand-lg techfont custom-navbar"> 
+        <nav class="navbar navbar-expand-lg navbar-light bg-light techfont custom-navbar"> 
             <div class="container">
                 <ul class="nav navbar-nav">
-                    <li><a href="{% url post_list %}" class="navbar-brand bigbrand">My Blog</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a href="https://www.github.com">GitHub</a></li>
-                    <li><a href="https://www.linkedin.com">LinkedIn</a></li>
+                    <li><a href="{% url 'post_list' %}" class="navbar-brand bigbrand">My Blog</a></li>
+                    <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                    <li><a href="https://github.com/AgrlPritam" class="nav-link">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/pritam-pratik-agrawal-a97659b4/" class="nav-link">LinkedIn</a></li>
                 </ul>
 
                 <ul class="nav justify-content-end">
@@ -34,7 +35,7 @@
                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Log Out</a></li>
                     <li class="nav-item"><a>Welcome: {{user.username}}</a></li>
                     {% else %}
-                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link"><span class="glyphicon glyphicon-user"></span></a></li>
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link"><i style='font-size:40px' class="fas fa-user"></i></a></li>
                     {% endif %}
                 </ul>
             </div>
